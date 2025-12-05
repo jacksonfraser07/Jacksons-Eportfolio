@@ -1,49 +1,234 @@
+.container {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Global styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f7f7f7;
+    color: #f2f2f2;
+
+    /* Retro spacey gradient background */
+    background:
+        radial-gradient(circle at top, #3b1f73 0%, #050017 55%, #000000 100%);
+    background-attachment: fixed;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* HEADER – big arcade title */
 header {
-    background: #222;
-    color: white;
-    padding: 50px 20px;
+    text-align: center;
+    padding: 40px 20px 15px;
+}
+
+header h1 {
+    font-family: 'Press Start 2P', system-ui, sans-serif;
+    font-size: 2rem;
+    color: #00ffbf;
+    text-shadow:
+        0 0 6px #00ffbf,
+        0 0 12px #00b7ff,
+        0 0 18px #00b7ff;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
     text-align: center;
 }
 
-nav {
-    background: #333;
-    padding: 10px;
+header p {
+    font-size: 0.85rem;
+    color: #bfbfe5;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     text-align: center;
+}
+
+/* NAVBAR – looks like an arcade menu bar */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 10px 0 25px;
 }
 
 nav a {
-    color: white;
-    margin: 0 15px;
+    font-family: 'Press Start 2P', system-ui, sans-serif;
+    font-size: 0.65rem;
     text-decoration: none;
-    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 2px solid #ff00c8;
+    background: rgba(10, 0, 40, 0.9);
+
+    box-shadow:
+        0 0 8px rgba(255, 0, 200, 0.7),
+        0 0 16px rgba(0, 255, 191, 0.4);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease,
+        border-color 0.15s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    transform: translateY(-2px);
+    background: rgba(255, 0, 200, 0.15);
+    border-color: #00ffbf;
+    box-shadow:
+        0 0 10px rgba(0, 255, 191, 0.8),
+        0 0 20px rgba(0, 183, 255, 0.7);
+}
+
+img {
+    display: block;
+    max-width: 75%;
+    height: auto;
+    
+    margin: 0 auto 20px;
+    border: 4px solid #00ffbf;
+    box-shadow:
+        0 0 10px rgba(0, 255, 191, 0.7),
+        0 0 20px rgba(0, 183, 255, 0.5);
 }
 
 section {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: auto;
+    position: relative;
+    background: rgba(6, 0, 30, 0.95);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(0, 255, 191, 0.7);
+    box-shadow:
+        0 0 15px rgba(0, 0, 0, 0.75),
+        0 0 25px rgba(0, 255, 191, 0.4);
+
+    z-index: 0; /* NEW */
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.08) 1px,
+            transparent 1px
+        );
+    background-size: 100% 3px;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: -1; /* NEW – pushes the effect behind everything */
 }
 
 h2 {
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
+    font-family: 'Press Start 2P', system-ui, sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #ffea00;
+    margin-bottom: 14px;
+    text-shadow:
+        0 0 6px #ffea00,
+        0 0 12px #ff00c8;
+        text-align: center;
+}
+
+h3 {
+    font-family: 'Press Start 2P', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: #00ffbf;
+    margin-bottom: 8px;
+}
+
+p,
+li {
+    font-size: 0.95rem;
+    color: #e5e5ff;
+}
+
+/* GENERAL LINKS */
+a {
+    color: #00fff2;
+}
+
+a:hover {
+    color: #ffea00;
 }
 
 .project {
-    background: white;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    display: block;
+    background: rgba(12, 2, 50, 0.95);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 14px 0;
+
+    border: 1px solid rgba(255, 0, 200, 0.7);
+    box-shadow:
+        0 0 10px rgba(0, 0, 0, 0.8),
+        0 0 15px rgba(255, 0, 200, 0.5);
+
+    text-decoration: none;   
+    color: inherit;          
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        border-color 0.15s ease;
 }
+
+.project h3,
+.project p {
+    text-decoration: none; 
+}
+
+.project:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    border-color: #00ffbf;
+    box-shadow:
+        0 0 20px rgba(0, 255, 191, 0.8),
+        0 0 24px rgba(0, 183, 255, 0.7);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 24px 0 10px;
+    font-size: 0.8rem;
+    color: #9b9bc5;
+}
+
+/* Make it usable on phones */
+@media (max-width: 600px) {
+    .container {
+        padding: 12px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 0.6rem;
+        padding: 6px 10px;
+    }
+
+    section {
+        padding: 16px 14px;
+    
