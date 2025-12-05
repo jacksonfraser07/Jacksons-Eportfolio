@@ -94,6 +94,7 @@ nav a:hover {
 img {
     display: block;
     max-width: 75%;
+    max-height: 500px;
     height: auto;
     
     margin: 0 auto 20px;
@@ -201,7 +202,20 @@ a:hover {
         0 0 20px rgba(0, 255, 191, 0.8),
         0 0 24px rgba(0, 183, 255, 0.7);
 }
-
+video {
+    display: flex;
+    justify-content: center;   /* centers the video inside */
+    align-items: center;
+    padding: 12px;
+    margin: 20px auto;         /* centers the whole box */
+    border-radius: 10px;
+    background: rgba(6, 0, 30, 0.95);
+    border: 2px solid #00ffbf;
+    box-shadow:
+        0 0 12px rgba(0, 255, 191, 0.8),
+        0 0 22px rgba(0, 183, 255, 0.6),
+        inset 0 0 12px rgba(0, 255, 191, 0.3);
+}
 /* FOOTER */
 footer {
     text-align: center;
@@ -229,6 +243,7 @@ footer {
         padding: 6px 10px;
     }
 
-    section {
-        padding: 16px 14px;
-    
+        section {
+            padding: 16px 14px;
+        }
+    }
